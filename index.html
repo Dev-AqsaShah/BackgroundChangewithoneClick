@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color Changer</title>
+  <style>
+    body {
+      transition: background-color 0.5s;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="colorChangeButton" onclick="changeBackgroundColor()">click me</button>
+
+  <script>
+    function changeBackgroundColor() {
+      var body = document.body;
+      var currentColor = window.getComputedStyle(body).getPropertyValue('background-color');
+      var newColor = (currentColor === 'rgb(0, 0, 0)') ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)';
+      body.style.backgroundColor = newColor;
+    }
+  </script>
+</body>
+</html>
